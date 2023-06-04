@@ -1,0 +1,38 @@
+{
+  "Records": [
+    {
+      "eventVersion": "2.1",
+      "eventSource": "aws:s3",
+      "awsRegion": "us-east-1",
+      "eventTime": "2023-05-26T08:35:17.219Z",
+      "eventName": "ObjectCreated:Put",
+      "userIdentity": {
+        "principalId": "A3PT0CI2MBMCK5"
+      },
+      "requestParameters": {
+        "sourceIPAddress": "102.215.56.187"
+      },
+      "responseElements": {
+        "x-amz-request-id": "6SXTG179CXM5V897",
+        "x-amz-id-2": "pWtWSLtF2CXdeuZ319YMRH/9/MBd+09W8WnX2c90YtmK6FxodHhxfhpZYqaHrArb+EktpNP5QljhqcC3n388BoLzRpXtygqT"
+      },
+      "s3": {
+        "s3SchemaVersion": "1.0",
+        "configurationId": "506c128b-3bba-4db7-8fc8-25404dc1902b",
+        "bucket": {
+          "name": "testvidbuc3",
+          "ownerIdentity": {
+            "principalId": "A3PT0CI2MBMCK5"
+          },
+          "arn": "arn:aws:s3:::testvidbuc3"
+        },
+        "object": {
+          "key": "video.mp4",
+          "size": 8397326,
+          "eTag": "402c94f08442ddfe03c61bfac461c605",
+          "sequencer": "0064706F4510BA4399"
+        }
+      }
+    }
+  ]
+}

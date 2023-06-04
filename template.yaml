@@ -1,0 +1,34 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+
+Resources:
+  MyBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: !Sub "vidbucket-${AWS::AccountId}"
+
+  HelloWorldFunction:
+    Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
+    Properties:
+      CodeUri: hello_world/
+      Handler: app.lambda_handler
+      Runtime: python3.10
+      Timeout: 200
+      Architectures:
+      - x86_64
+      Policies:
+        - S3CrudPolicy:
+            BucketName: !Sub "vidbucket-${AWS::AccountId}"
+        - S3WritePolicy:
+            BucketName: thumbnail876
+      Events:
+        S3Event:
+          Type: S3
+          Properties:
+            Bucket: !Ref MyBucket
+            Events:
+              - s3:ObjectCreated:*
+
+
+      
+  
